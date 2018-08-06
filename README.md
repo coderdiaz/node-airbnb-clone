@@ -1,5 +1,5 @@
 # Airbnb Clone
-## A simple node application based on Airbnb.com.
+## A simple node application based in Airbnb.com.
 
 ### Used tools
 - Node.
