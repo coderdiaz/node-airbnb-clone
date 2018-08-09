@@ -1,18 +1,34 @@
 extends layout
 
 block content
-  h1="Bienvenido a Airbnb"
-  h2="Estos son los alojamientos que tenemos para ti"
-  div(class="row")
-    each place in places
-      div(class="col-4")
-        div(class="card-item")
-          div(class="card-item--image")
-            img(src=place.cover)
-          div(class="card-item--content")
-            span(class="card-item--title")=place.name
-            span(class="card-item--description")=place.description
-            a(href="https://www.google.com/maps/@#{place.location.lat},#{place.location.lng},15z", class="card-item--maps", target="_blank")="Ver en Google Maps"
-          div(class="card-item--info")
-            span(class="card-item--price")="Price: $" + place.price
-  
+  h1(class="section-title")="Reserva alojamientos y experiencia únicos"
+  h2(class="section-subtitle")="Estos son los alojamientos que tenemos para ti"
+  section(class="section-body")
+    div(class="row")
+      each place in places
+        div(class="col-md-6 col-lg-4")
+          div(class="card-item")
+            div(class="card-item--image")
+              a(href="#")
+                img(src=place.cover)
+            div(class="card-item--content")
+              span(class="card-item--title")=place.name
+              span(class="card-item--description")=place.description
+              a(href="https://www.google.com/maps/@#{place.location.lat},#{place.location.lng},15z", class="card-item--maps", target="_blank")="Ver en Google Maps"
+            div(class="card-item--info")
+              span(class="card-item--price")="$" + place.price + " MXN por noche"
+  section(class="section-feature")
+    h1(class="section-title")="Viajar con Node Airbnb"
+    div(class="row")
+      div(class="col-sm-4 col-md-4 feature-card")
+        img(src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Messages-512.png", width="45")
+        span="Atención al cliente 24 horas los 7 días de la semana"
+        p="De día o de noche, estamos aquí para lo que necesites. Habla con nuestro equipo de atención al cliente a cualquier hora, desde cualquier lugar del mundo."
+      div(class="col-sm-4 col-md-4 feature-card")
+        img(src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Analytics_balls-512.png", width="45")
+        span="Estándares de hospitalidad generales"
+        p="Los huéspedes evalúan a sus anfitriones después de cada estancia. Para formar parte de Airbnb, todos los anfitriones deben tener una calificación mínima y cumplir nuestros estándares de hospitalidad."
+      div(class="col-sm-4 col-md-4 feature-card")
+        img(src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Plus-512.png", width="45")
+        span="Anfitriones de 5 estrellas"
+        p="Nuestros anfitriones son pura hospitalidad. Disfruta de unas sábanas recién puestas y atiende sus consejos sobre los mejores sitios para ir a comer."

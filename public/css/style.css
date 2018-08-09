@@ -2,6 +2,8 @@
  * Styles application
  */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
 :root {
   --background-color: #fff;
   --white-color: #fff;
@@ -10,6 +12,8 @@
   --gray-color: #EAEAEA;
   --font-primary: 'Roboto', Arial, sans-serif;
   --gray-200: #ABABAB;
+  --font-family-sans-serif: 'Roboto', Arial, sans-serif;
+  --primary: var(--main-color);
 }
 
 body {
@@ -21,9 +25,16 @@ body {
   font-family: var(--font-primary);
 }
 
-.container {
-  width: 960px;
-  margin: 0 auto;
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all .1s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primary);
+  opacity: .8;
 }
 
 .header {
@@ -35,6 +46,7 @@ body {
 
 .main {
   padding: 20px 0;
+  line-height: 1.5;
 }
 
 .footer {
@@ -50,25 +62,15 @@ hr {
   border-color: var(--gray-color);
 }
 
-.col-4 {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding: 15px 0;
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-}
-
 .card-item {
-  margin: 5px;
-  border: 1px solid;
-  border-color: var(--gray-color);
+  margin-bottom: 15px;
 }
 
 .card-item .card-item--image {
   overflow: hidden;
   height: 200px;
   position: relative;
+  border-radius: 3px;
 }
 
 .card-item .card-item--image img {
@@ -79,7 +81,7 @@ hr {
 }
 
 .card-item .card-item--content {
-  padding: 15px;
+  padding-top: 5px;
 }
 
 .card-item .card-item--content span {
@@ -88,25 +90,28 @@ hr {
 
 .card-item .card-item--content .card-item--title {
   font-size: 18px;
+  font-weight: 600;
 }
 
 .card-item .card-item--content .card-item--description {
   font-size: 14px;
-  color: var(--gray-200);
+  color: var(--text-color);
+  font-weight: 200;
 }
 
-a {
+.card-item .card-item--content a {
   color: var(--main-color);
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
 }
 
-a:hover {
+.card-item .card-item--content a:hover {
   opacity: .8;
 }
 
 .card-item .card-item--info {
-  padding: 15px;
+  font-weight: 200;
 }
 
 .card-item .card-item--info .card-item--price {
@@ -116,4 +121,63 @@ a:hover {
 .row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--gray-200);
+  margin-top: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+.section-body {
+  margin-top: 25px;
+}
+
+.section-feature {
+  padding: 35px 0;
+}
+
+.section-feature .section-title {
+  margin-bottom: 15px;
+}
+
+.feature-card {
+  font-weight: 200;
+}
+
+.feature-card img {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature-card span {
+  font-weight: 600;
+  font-size: 18px;
+  height: 50px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nav-custom {
+  display: inline-flex;
+}
+
+.nav-custom .nav-item a {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 14px;
 }

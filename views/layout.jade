@@ -1,16 +1,26 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     title="Alojamientos, Alquileres vacacionales - Node Airbnb"
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/style.css", rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Roboto")
+    link(rel="shortcut icon", sizes="76x76", type="image/x-icon", href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico")
   body
     header(class="header")
       div(class="container")
-        a(href="#", class="logotype")="Airbnb Application"
+        a(href="#", class="navbar-brand logotype")
+          img(src="https://cdn4.iconfinder.com/data/icons/socialcones/508/Airbnb-512.png", width="45")
+        ul(class="nav nav-custom justify-content-end")
+          li(class="nav-item")
+            a(class="nav-link active", href="#")="Iniciar sesión"
+          li(class="nav-item")
+            a(class="nav-link active", href="#")="Registrate"
     main(class="main")
       div(class="container")
         block content
     footer(class="footer")
       div(class="container")
-        span="Copyright 2018"
+        span="This project it was built for learn to make web applications :). Source code in " 
+          a(href="https://github.com/coderdiaz/node-airbnb-clone")="Github"
