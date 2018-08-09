@@ -4,8 +4,9 @@
  * Module dependencies.
  */
 
+require('dotenv').config();
 var app = require('../app');
-var debug = require('debug')('myapp:server');
+var debug = require('debug')('node-airbnb-clone:server');
 var http = require('http');
 
 /**
