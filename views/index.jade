@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1="Bienvenido a Airbnb"
+  h2="Estos son los alojamientos que tenemos para ti"
+  div(class="row")
+    each place in places
+      div(class="col-4")
+        div(class="card-item")
+          div(class="card-item--image")
+            img(src=place.cover)
+          div(class="card-item--content")
+            span(class="card-item--title")=place.name
+            span(class="card-item--description")=place.description
+            a(href="https://www.google.com/maps/@#{place.location.lat},#{place.location.lng},15z", class="card-item--maps", target="_blank")="Ver en Google Maps"
+          div(class="card-item--info")
+            span(class="card-item--price")="Price: $" + place.price
+  
