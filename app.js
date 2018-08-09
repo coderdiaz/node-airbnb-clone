@@ -2,6 +2,9 @@ var express = require('express');
 var path = require('path');
 var createError = require('http-errors');
 
+// Routes
+var indexRouter = require('./routes/index');
+
 var app = express();
 
 // view engine setup
@@ -12,6 +15,8 @@ app.set('view engine', 'jade');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
