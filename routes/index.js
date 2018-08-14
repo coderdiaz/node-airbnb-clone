@@ -3,9 +3,13 @@ var router = express.Router();
 var House = require('../models/house');
 
 /* GET home page */
-router.get('/', async function (req, res, next) {
-  const items = await House.find().exec();
-  res.render('index', { places: items });
+router.get('/', async (req, res, next) => {
+  try {
+    const items = await House.find().exec();
+    res.render('index', { places: items });
+  } catch (err) {
+    // TODO: Catch exception
+  }
 });
 
 module.exports = router;

@@ -1,14 +1,14 @@
-var express = require('express');
-var path = require('path');
-var createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const createError = require('http-errors');
 
 // Pages
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 
 // API
-var houseApiRouter = require('./routes/api/house');
+const houseApiRouter = require('./routes/api/house');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
