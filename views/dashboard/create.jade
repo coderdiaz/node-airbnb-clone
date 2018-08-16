@@ -1,0 +1,29 @@
+extends ../layout
+block content
+  section(class="section-create-form")
+    div(class="container")
+      div(class="row")
+        div(class="col-md-12")
+          h1(class="section-title")="Registro de nuevo alojamiento"
+          h2(class="section-subtitle")="Por favor completa el formulario"
+          br
+          div(class="alert alert-success", v-if="success")="Registro exitoso"
+          div(class="alert alert-danger", v-if="error")="Houston! Tenemos problema:"
+            ul
+              li(v-for="error in errors")="{{error}}"
+          div(class="form-group")
+            label="Nombre de la propiedad"
+            input(type="text", class="form-control", v-model="formdata.name")
+          div(class="form-group")
+            label="Descripción"
+            input(type="text", class="form-control", v-model="formdata.description")
+          div(class="form-group")
+            label="Precio $"
+            input(type="text", class="form-control", v-model="formdata.price")
+          div(class="form-group")
+            label="Imagen"
+            input(type="text", class="form-control", v-model="formdata.cover")
+          div(class="form-group")
+            button(class="btn btn-info btn-block", v-on:click.prevent="onRegister")="Registrar"
+block scripts
+  script(src="js/create.js")
