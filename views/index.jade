@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  each place in places
-    h1(class="section-title")="Reserva alojamientos y experiencia únicos"
-    h2(class="section-subtitle")="Estos son los alojamientos que tenemos para ti"
-    section(class="section-body")
-      div(class="row")
+  h1(class="section-title")="Reserva alojamientos y experiencia únicos"
+  h2(class="section-subtitle")="Estos son los alojamientos que tenemos para ti"
+  section(class="section-body")
+    div(class="row")
+      each place in places
         div(class="col-md-6 col-lg-4")
           div(class="card-item")
             div(class="card-item--image")
@@ -15,8 +15,3 @@ block content
               span(class="card-item--title")=place.name
             div(class="card-item--info")
               span(class="card-item--price")="$" + place.price + " MXN por noche"
-  else
-    div(class="row")
-      div(class="col-md-6 col-lg-4")
-        h4="Sin resultados"
-        span="Vuelve más tarde, lamentablemente aún no tenemos alojamientos disponibles."

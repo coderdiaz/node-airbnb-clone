@@ -12,4 +12,13 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+/* GET dashboard create page */
+router.get('/create', (req, res, next) => {
+  try {
+    res.render('dashboard/create');
+  } catch (err) {
+    // TODO: Catch exception
+  }
+});
+
 module.exports = router;
